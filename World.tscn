@@ -1,0 +1,60 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Dialogue.gd" type="Script" id=1]
+[ext_resource path="res://DialoguePanel.gd" type="Script" id=2]
+
+[node name="World" type="Node2D"]
+script = ExtResource( 1 )
+dialoguePath = "res://dialogue.json"
+
+[node name="DialoguePanel" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 5.28662
+margin_top = 403.266
+margin_right = 997.287
+margin_bottom = 608.266
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="DialoguePanel"]
+margin_left = -3.0
+margin_top = 1.0
+margin_right = 983.0
+margin_bottom = 202.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BranchButton0" type="Button" parent="."]
+margin_left = 81.063
+margin_top = 166.734
+margin_right = 217.063
+margin_bottom = 253.734
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BranchButton1" type="Button" parent="."]
+margin_left = 547.759
+margin_top = 163.559
+margin_right = 683.759
+margin_bottom = 250.559
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NoBranchButton" type="Button" parent="."]
+margin_left = 293.141
+margin_top = 311.119
+margin_right = 500.141
+margin_bottom = 339.119
+text = "Next"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="say_dialogue" from="." to="DialoguePanel" method="onSayDialogue"]
